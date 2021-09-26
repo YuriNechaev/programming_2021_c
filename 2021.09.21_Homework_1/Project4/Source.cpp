@@ -14,7 +14,13 @@ int main(int argc, char* argv[])
 
 	a = (b * c) % 109;
 
-	cout << a;
+	if (b > 0)
 
-	return EXIT_SUCCESS;
+		cout << a;
+
+	else
+
+		cout << 109 - a;
+		
+		return EXIT_SUCCESS;
 }
