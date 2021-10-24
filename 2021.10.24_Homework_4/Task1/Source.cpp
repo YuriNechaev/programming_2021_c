@@ -29,9 +29,12 @@ int main(int argc, char* argv[])
 	cout << endl;
 
 	cout << "even:";
-	for (int i = 0; i <= n / 2 - 1; i++)
+	for (int i = 0; i < n; i++)
 	{
-		cout << a[2 * i + 1] << " ";
+		if (a[i] % 2 == 0)
+		{
+			cout << a[i] << " ";
+		}
 	}
 	cout << endl;
 
@@ -88,12 +91,20 @@ int main(int argc, char* argv[])
 	}
 	cout << endl;
 
-	cout << "odd:";
-	for (int i = 0; i < n / 2; i++)
+	cout << "odd indexes:";
+	if (n % 2 == 0)
 	{
-		cout << a[2 * i] << " ";
+		for (int i = 0; i < n / 2; i++)
+		{
+			cout << a[2 * i] << " ";
+		}
 	}
-	cout << endl;
-
+	else
+	{
+		for (int i = 0; i < n / 2 + 1; i++)
+		{
+			cout << a[2 * i] << " ";
+		}
+	}
 	return EXIT_SUCCESS;
 }
