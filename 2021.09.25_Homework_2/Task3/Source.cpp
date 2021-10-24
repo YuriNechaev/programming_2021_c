@@ -4,20 +4,26 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	
-	int a = 0;
-	int b = 0;
-	int c = 0;
 
-	cin >> a >> b >> c;
+	int n = 0;
+	int k = 0;
+	int m = 0;
+	int ans = 0;
 
-	if (c % a == 0)
+	cin >> k >> m >> n;
 
-		cout << (c / a) * 2 * b;
-
+	if (n <= k)
+	{
+		ans = 2 * m;
+	}
+	else if ((n * 2) % k == 0)
+	{
+		ans = m * ((n * 2) / k);
+	}
 	else
+		ans = m * (1 + ((n * 2) / k));
 
-		cout << ((c / a) + 1) * 2 * b;
+	cout << ans;
 
 	return EXIT_SUCCESS;
 
