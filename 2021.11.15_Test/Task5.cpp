@@ -5,17 +5,17 @@ int main(int argc, char* argv[])
 {
 	int n = 0;
 	int m = 0;
-	int b=0;
+	int b = 0;
 
-	cin>>n>>m;
+	cin >> n >> m;
 
 	int* a1 = new int[n] {0};
 	int* a2 = new int[m] {0};
 
 	for (int i = 0; i < n; ++i)
 	{
-		cin>>b;
-		a1[i]=b;
+		cin >> b;
+		a1[i] = b;
 	}
 	for (int i = 0; i < m; ++i)
 	{
@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 		{
 			if (a1[i] == a2[j])
 			{
-				cout<<a1[i]<<" ";
+				cout << a1[i] << " ";
 			}
 		}
 	}

@@ -30,13 +30,13 @@ int main(int argc, char* argv[])
 	{
 		if (a[i] == maxim)
 		{
-			a[i]=minim;
+			a[i] = minim;
 		}
 	}
 
 	for (int i = 0; i < n; ++i)
 	{
-		cout<<a[i]<<" ";
+		cout << a[i] << " ";
 	}
 
 	delete[] a;

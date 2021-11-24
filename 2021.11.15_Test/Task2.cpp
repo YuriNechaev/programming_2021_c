@@ -12,12 +12,12 @@ int main(int argc, char* argv[])
 	{
 		c += 1;
 	}
-		
-	int* a = new int[c]{ 0 };
+
+	int* a = new int[c] { 0 };
 	for (int i = 0; i < c; ++i)
 	{
 		cin >> b;
-		a[i]=b;
+		a[i] = b;
 	}
 	for (int i = 0; i < c; ++i)
 	{
