@@ -1,6 +1,6 @@
 #include <iostream>
-
 using namespace std;
+
 int main(int argc, char* argv[])
 {
 	long long n = 0;
@@ -12,10 +12,10 @@ int main(int argc, char* argv[])
 	sgn = ((t << 63) & n);
 	if (sgn != 0)
 	{
-		n = -1*n;
+		n = -1 * n;
 	}
-	
-	cout<<n;
+
+	cout << n;
 
 	return EXIT_SUCCESS;
 }

@@ -16,10 +16,14 @@ int main(int argc, char* argv[])
 		for (int j = 1; j <= i; j++)
 		{
 			if (j * j == i)
+			{
 				flag = 1;
+			}
 		}
 		if (flag == 1)
+		{
 			cout << i << endl;
+		}
 	}
 
 	return EXIT_SUCCESS;

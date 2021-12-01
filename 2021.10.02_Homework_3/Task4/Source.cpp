@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 	int c = 1;
 
 	cin >> n >> k;
-	
+
 	for (int i = 1; i <= n; i++)
 	{
 		a = a * i;
@@ -23,8 +23,8 @@ int main(int argc, char* argv[])
 	{
 		c = c * i;
 	}
-	
-	cout<<a/(b*c);
+
+	cout << a / (b * c);
 
 	return EXIT_SUCCESS;
 }

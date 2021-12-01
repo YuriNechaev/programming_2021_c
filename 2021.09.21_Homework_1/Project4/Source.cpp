@@ -8,7 +8,9 @@ int main(int argc, char* argv[])
 	int c = 0;
 
 	cin >> b >> c;
+
 	a = b * c % 109;
+
 	cout << (a + 109) % 109;
 
 	return EXIT_SUCCESS;

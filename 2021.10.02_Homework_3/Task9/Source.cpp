@@ -14,7 +14,9 @@ int main(int argc, char* argv[])
 	for (i = a; i <= b; i++)
 	{
 		if (i % d == c)
+		{
 			cout << i << endl;
+		}
 	}
 
 	return EXIT_SUCCESS;
