@@ -10,63 +10,130 @@ int main(int argc, char* argv[])
 
 	cin >> m >> n >> x >> y;
 
-	if (x == 1)
+	if (m == 1)
 	{
-		if (y == 1)
+		if (n == 2)
 		{
-			cout << 2 << " " << 1 << endl;
-			cout << 1 << " " << 2;
+			if (y == 1)
+			{
+				cout << 1 << " " << y + 1;
+			}
+			else
+			{
+				cout << 1 << " " << y - 1;
+			}
 		}
-		else if (y == n)
+		else if (n > 2)
 		{
-			cout << 2 << " " << y << endl;
-			cout << 1 << " " << y - 1;
-		}
-		else
-		{
-			cout << 2 << " " << y << endl;
-			cout << 1 << " " << y - 1 << endl;
-			cout << 1 << " " << y + 1;
+			if (y == 1)
+			{
+				cout << 1 << " " << y + 1;
+			}
+			else if (y == n)
+			{
+				cout << 1 << " " << y - 1;
+			}
+			else
+			{
+				cout << 1 << " " << y - 1 << endl;
+				cout << 1 << " " << y + 1;
+			}
 		}
 	}
-	else if (x == m)
+	else if (n == 1)
 	{
-		if (y == 1)
+		if (m == 2)
 		{
-			cout << x - 1 << " " << 1 << endl;
-			cout << x << " " << 2;
+			if (x == 1)
+			{
+				cout << x + 1 << " " << 1;
+			}
+			else
+			{
+				cout << x - 1 << " " << 1;
+			}
 		}
-		else if (y == n)
+		else if (m > 2)
 		{
-			cout << 2 << " " << y << endl;
-			cout << 1 << " " << y - 1;
-		}
-		else
-		{
-			cout << x << " " << y + 1 << endl;
-			cout << x << " " << y - 1 << endl;
-			cout << x - 1 << " " << y;
+			if (x == 1)
+			{
+				cout << x + 1 << " " << 1;
+			}
+			else if (x == m)
+			{
+				cout << x - 1 << " " << 1;
+			}
+			else
+			{
+				cout << x - 1 << " " << 1 << endl;
+				cout << x + 1 << " " << 1;
+			}
 		}
 	}
-	else if (y == 1)
-	{
-		cout << x + 1 << " " << y << endl;
-		cout << x - 1 << " " << y << endl;
-		cout << x << " " << y + 1;
-	}
-	else if (y == n)
-	{
-		cout << x + 1 << " " << y << endl;
-		cout << x - 1 << " " << y << endl;
-		cout << x << " " << y - 1;
-	}
+	
 	else
 	{
-		cout << x + 1 << " " << y << endl;
-		cout << x - 1 << " " << y << endl;
-		cout << x << " " << y - 1 << endl;
-		cout << x << " " << y + 1;
-	}
+		if (x == 1)
+		{
+			if (y == 1)
+			{
+				cout << x << " " << y + 1 << endl;
+				cout << x + 1 << " " << y;
+			}
+			else if (y == n)
+			{
+				cout << x << " " << y - 1 << endl;
+				cout << x + 1 << " " << y;
+			}
+			else
+			{
+				cout << x << " " << y - 1 << endl;
+				cout << x << " " << y + 1 << endl;
+				cout << x + 1 << " " << y;
+			}
+		}
 
+		else if (x == m)
+		{
+			if (y == 1)
+			{
+				cout << x - 1 << " " << y << endl;
+				cout << x << " " << y + 1;
+			}
+			else if (y == n)
+			{
+				cout << x - 1 << " " << y << endl;
+				cout << x << " " << y - 1;
+			}
+			else
+			{
+				cout << x - 1 << " " << y << endl;
+				cout << x << " " << y - 1 << endl;
+				cout << x << " " << y + 1;
+			}
+		}
+
+		else if (y == 1)
+		{
+			cout << x - 1 << " " << y << endl;
+			cout << x << " " << y + 1 << endl;
+			cout << x + 1 << " " << y;
+		}
+
+		else if (y == n)
+		{
+			cout << x - 1 << " " << y << endl;
+			cout << x << " " << y - 1 << endl;
+			cout << x + 1 << " " << y;
+		}
+
+		else
+		{
+			cout << x - 1 << " " << y << endl;
+			cout << x << " " << y - 1 << endl;
+			cout << x << " " << y + 1 << endl;
+			cout << x + 1 << " " << y;
+		}
+	}
 	return EXIT_SUCCESS;
 }

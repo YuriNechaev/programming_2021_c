@@ -1,5 +1,4 @@
 #include<iostream>
-
 using namespace std;
 
 int main(int argc, char* argv[])
@@ -21,10 +20,11 @@ int main(int argc, char* argv[])
 		ans = m * ((n * 2) / k);
 	}
 	else
+	{
 		ans = m * (1 + ((n * 2) / k));
+	}
 
 	cout << ans;
 
 	return EXIT_SUCCESS;
-
 }

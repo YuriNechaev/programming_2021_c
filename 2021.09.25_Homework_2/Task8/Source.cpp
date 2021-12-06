@@ -1,32 +1,66 @@
 #include<iostream>
-
 using namespace std;
 
 int main(int argc, char* argv[])
 {
-
 	int a = 0;
 	int b = 0;
 	int c = 0;
+	int x = 0;
+	int y = 0;
+	int z = 0;
 
 	cin >> a >> b >> c;
 
-	if (a + b < c or b + c < a or a + c < b)
+	if ((a >= b) && (a >= c))
+	{
+		x = a;
+	}
+	else if ((b >= c) && (b >= a))
+	{
+		x = b;
+	}
+	else if ((c >= a) && (c >= b))
+	{
+		x = c;
+	}
 
-		cout << "impossible";
+	if ((a <= b) && (a <= c))
+	{
+		z = a;
+	}
+	else if ((b <= c) && (b <= a))
+	{
+		z = b;
+	}
+	else if ((c <= a) && (c <= b))
+	{
+		z = c;
+	}
 
-	else if ((a * a + b * b == c * c) or (c * c + b * b == a * a) or (a * a + c * c == b * b))
+	y = a + b + c - x - z;
 
-		cout << "right";
+	if (x < y + z)
+	{
+		if (x * x == y * y + z * z)
+		{
+			cout << "right";
+		}
 
-	else if ((a * a + b * b < c * c) or (c * c + b * b < a * a) or (a * a + c * c < b * b))
+		else if (x * x > y * y + z * z)
+		{
+			cout << "obtuse";
+		}
 
-		cout << "obtuse";
-	
+		else
+		{
+			cout << "acute";
+		}
+	}
 	else
-
-		cout << "acute";
+	{
+		cout << "impossible";
+	}
 
 	return EXIT_SUCCESS;
-
 }

@@ -1,5 +1,4 @@
 #include<iostream>
-
 using namespace std;
 
 int main(int argc, char* argv[])
@@ -11,33 +10,22 @@ int main(int argc, char* argv[])
 
 	cin >> a >> b >> c >> d;
 
-	if (a == 0 and b == 0)
+	if ((a == 0) && (b == 0))
 	{
 		cout << "INF";
 	}
-	else if (a == 0)
+	else if ((a == 0) || (b * c == a * d))
 	{
 		cout << "NO";
 	}
-	else if (c == 0)
+	else if (b % a == 0)
 	{
-		cout << -b / a;
-	}
-	else if (d == 0)
-	{
-		if (b == 0)
-		{
-			cout << "NO";
-		}
-		else
-			cout<<"0";
-	}
-	else if (b / a == d / c)
-	{
-		cout << "NO";
+		cout << (-1) * b / a;
 	}
 	else
-		cout << -b * a;
+	{
+		cout << "NO";
+	}
 
 	return EXIT_SUCCESS;
 }

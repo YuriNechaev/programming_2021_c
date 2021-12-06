@@ -3,7 +3,6 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-
 	int n = 0;
 
 	cin >> n;
@@ -13,8 +12,9 @@ int main(int argc, char* argv[])
 		cout << "YES";
 	}
 	else
-
+	{
 		cout << "NO";
+	}
 
 	return EXIT_SUCCESS;
 }
