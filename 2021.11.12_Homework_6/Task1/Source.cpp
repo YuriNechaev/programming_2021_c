@@ -84,7 +84,7 @@ int main(int argc, char* argv[])
 			int* newArr = new int[(c - 1) * sizeof(int)]{ 0 };
 			for (int i = 1; i < c; ++i)
 			{
-				newArr[i-1] = arr[i];
+				newArr[i - 1] = arr[i];
 			}
 			for (int i = 0; i < c - 1; ++i)
 			{
