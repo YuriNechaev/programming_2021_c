@@ -4,7 +4,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	int c = 10;
+	int c = 1;
 	int t = 0;
 	int b = 0;
 	int newelem = 0;
@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
 
 		if (b == 2)
 		{
-			cout << "Input element:" << endl;
+			cout << "Input an element:" << " ";
 			cin >> newelem;
 			int* newArr = new int[(c + 1) * sizeof(int)]{ 0 };
 			for (int i = 0; i < c; ++i)
@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
 
 		else if (b == 3)
 		{
-			cout << "Input element:" << endl;
+			cout << "Input an element:" << " ";
 			cin >> newelem;
 			int* newArr = new int[(c + 1) * sizeof(int)]{ 0 };
 			for (int i = 0; i < c; ++i)
