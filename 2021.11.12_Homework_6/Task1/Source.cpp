@@ -1,11 +1,11 @@
 #include <iostream>
 #include <cstdlib>
+#include "myArray.h"
 using namespace std;
 
 int main(int argc, char* argv[])
 {
 	int c = 1;
-	int t = 0;
 	int b = 0;
 	int newelem = 0;
 	int* arr = new int[c] { 0 };
@@ -25,16 +25,13 @@ int main(int argc, char* argv[])
 
 		if (b == 0)
 		{
-			delete[] arr;
+			deleteArray(arr);
 			exiting = true;
 		}
 
 		else if (b == 1)
 		{
-			for (int i = 0; i < c; ++i)
-			{
-				cout << arr[i] << " ";
-			}
+			printArray(arr, c);
 			cout << endl;
 		}
 
@@ -42,13 +39,11 @@ int main(int argc, char* argv[])
 		{
 			cout << "Input an element:" << " ";
 			cin >> newelem;
-			int* newArr = new int[(c + 1) * sizeof(int)]{ 0 };
-			for (int i = 0; i < c; ++i)
-			{
-				newArr[i] = arr[i];
-			}
-			newArr[c] = newelem;
-			delete[] arr;
+
+			int* newArr = nullptr;
+			newArr = addElementEnd(arr, c, newelem);
+
+			deleteArray(arr);
 			arr = newArr;
 			c += 1;
 		}
@@ -57,49 +52,40 @@ int main(int argc, char* argv[])
 		{
 			cout << "Input an element:" << " ";
 			cin >> newelem;
-			int* newArr = new int[(c + 1) * sizeof(int)]{ 0 };
-			for (int i = 0; i < c; ++i)
-			{
-				newArr[i + 1] = arr[i];
-			}
-			newArr[0] = newelem;
-			delete[] arr;
+
+			int* newArr = nullptr;
+			newArr = addElementBeginning(arr, c, newelem);
+
+			deleteArray(arr);
 			arr = newArr;
 			c += 1;
 		}
 
 		else if (b == 4)
 		{
-			int* newArr = new int[(c - 1) * sizeof(int)]{ 0 };
-			for (int i = 0; i < c - 1; ++i)
-			{
-				newArr[i] = arr[i];
-			}
-			delete[] arr;
+			int* newArr = nullptr;
+
+			newArr = deleteElement(arr, c, c);
+
+			deleteArray(arr);
 			arr = newArr;
 			c -= 1;
 		}
 
 		else if (b == 5)
 		{
-			int* newArr = new int[(c - 1) * sizeof(int)]{ 0 };
-			for (int i = 1; i < c; ++i)
-			{
-				newArr[i - 1] = arr[i];
-			}
-			delete[] arr;
+			int* newArr = nullptr;
+
+			newArr = deleteElement(arr, c, 1);
+
+			deleteArray(arr);
 			arr = newArr;
 			c -= 1;
 		}
 
 		else if (b == 6)
 		{
-			for (int i = 0; i < c / 2; ++i)
-			{
-				t = arr[i];
-				arr[i] = arr[c - i - 1];
-				arr[c - i - 1] = t;
-			}
+			reverseArray(arr, c);
 		}
 	}
 
