@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 	cout << z1.abs() << endl;
 	cout << z2.arg() << endl;
 	cout << z1.reverse() << endl;
-	//z1.sqrt(5, cout); //вывод в поток cout формулы корней пятой степени
+	z1.Complexsqrt(5, cout);
 
 	return EXIT_SUCCESS;
 }

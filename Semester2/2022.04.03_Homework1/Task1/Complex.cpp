@@ -13,13 +13,13 @@ double Complex::GetX()
 {
 	return this->x;
 }
-double Complex::GetY()
-{
-	return this->y;
-}
 void Complex::SetX(double x)
 {
 	this->x = x;
+}
+double Complex::GetY()
+{
+	return this->y;
 }
 void Complex::SetY(double y)
 {
@@ -34,19 +34,22 @@ void Complex::operator=(Complex& complex)
 
 double Complex::abs()
 {
-	return pow((x * x + y * y), 1 / 2);
+	return pow(((this->x) * (this->x) + (this->y) * (this->y)), 1 / 2);
 }
 double Complex::arg()
 {
-	return atan2(x, y);
+	return atan2(this->x, this->y);
 }
 Complex Complex::reverse()
 {
 	return Complex((this->x) / ((this->x) * (this->x) + (this->y) * (this->y)), (-1) * (this->y) / ((this->x) * (this->x) + (this->y) * (this->y)));
 }
-void sqrt(int n, Complex complex)
+void Complex::Complexsqrt(int n, ostream& stream)
 {
-	cout << Complex((pow(complex.abs(), 1 / n) * cos(complex.arg() / n), pow(complex.abs(), 1 / n) * sin(complex.arg() / n)));
+	for (int i = 0; i < n; i++)
+	{
+		cout << Complex((pow(pow(((this->x) * (this->x) + (this->y) * (this->y)), 1 / 2), 1 / n) * cos(atan2((this->x), (this->y)) / n + 3.141592 * 2 * i / n), pow(pow(((this->x) * (this->x) + (this->y) * (this->y)), 1 / 2), 1 / n) * sin(atan2((this->x), (this->y)) / n + 3.141592 * 2 * i / n)));
+	}
 }
 Complex operator*(Complex complex1, Complex complex2)
 {
@@ -58,7 +61,7 @@ Complex operator*(double d, Complex complex)
 }
 Complex operator*(Complex complex, double d)
 {
-	return Complex((complex.x * d), (complex.y * d));
+	return Complex((d * complex.x), (d * complex.y));
 }
 Complex operator+(Complex complex1, Complex complex2)
 {
@@ -70,7 +73,7 @@ Complex operator/(Complex complex1, Complex complex2)
 }
 Complex operator-(Complex complex1, Complex complex2)
 {
-	return Complex((complex1.x - complex2.x), (complex1.y - complex2.y);
+	return Complex((complex1.x - complex2.x), (complex1.y - complex2.y));
 }
 ostream& operator<<(ostream& stream, const Complex& complex)
 {
