@@ -1,8 +1,10 @@
 #pragma once
 
-#include "Complex.h"
 #include <iostream>
 #include <cmath>
+#include"string"
+
+using namespace std;
 
 class Complex
 {
@@ -23,7 +25,7 @@ public:
 	double abs();
 	double arg();
 	Complex reverse();
-	Complex sqrt(int n, Complex complex);
+	//void sqrt(int n, ostream& stream);
 	friend Complex operator*(Complex complex1, Complex complex2);
 	friend Complex operator*(double d, Complex complex);
 	friend Complex operator*(Complex complex, double d);

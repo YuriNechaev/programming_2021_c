@@ -44,44 +44,64 @@ Complex Complex::reverse()
 {
 	return Complex((this->x) / ((this->x) * (this->x) + (this->y) * (this->y)), (-1) * (this->y) / ((this->x) * (this->x) + (this->y) * (this->y)));
 }
-Complex Complex::sqrt(int n, Complex complex)
+void sqrt(int n, Complex complex)
 {
-	return Complex(pow(complex.abs(), 1 / n) * cos(complex.arg() / n), pow(complex.abs(), 1 / n) * sin(complex.arg() / n));
+	cout << Complex((pow(complex.abs(), 1 / n) * cos(complex.arg() / n), pow(complex.abs(), 1 / n) * sin(complex.arg() / n)));
 }
 Complex operator*(Complex complex1, Complex complex2)
 {
 	return Complex(complex1.x * complex2.x - complex1.y * complex2.y, complex1.y * complex2.x + complex1.x * complex2.y);
 }
-Complex operator*(Complex complex1, Complex complex2)
-{
-	return Complex();
-}
 Complex operator*(double d, Complex complex)
 {
-	return Complex((this->x) * d), (this->y)* d)
+	return Complex((complex.x * d), (complex.y * d));
 }
 Complex operator*(Complex complex, double d)
 {
-	...
+	return Complex((complex.x * d), (complex.y * d));
 }
 Complex operator+(Complex complex1, Complex complex2)
 {
-	...
+	return Complex((complex1.x + complex2.x), (complex1.y + complex2.y));
 }
 Complex operator/(Complex complex1, Complex complex2)
 {
-	...
+	return complex1 * complex2.reverse();
 }
 Complex operator-(Complex complex1, Complex complex2)
 {
-	...
+	return Complex((complex1.x - complex2.x), (complex1.y - complex2.y);
 }
 ostream& operator<<(ostream& stream, const Complex& complex)
-
-Complex::Complex(const Complex& complex)
 {
-}
-
-Complex::~Complex()
-{
+	if (complex.x == 0 and complex.y == 0)
+	{
+		cout << 0;
+	}
+	else if (complex.x == 0)
+	{
+		if (complex.y == 1)
+		{
+			cout << "i";
+		}
+		else
+		{
+			cout << complex.y << "i";
+		}
+	}
+	else if (complex.y == 0)
+	{
+		cout << complex.x;
+	}
+	else
+	{
+		if (complex.y == 1)
+		{
+			cout << complex.x << "+" << "i";
+		}
+		else
+		{
+			cout << complex.x << "+" << complex.y << "i";
+		}
+	}
 }
