@@ -1,4 +1,5 @@
 #include <iostream>
+#include "cmath"
 
 using namespace std;
 
@@ -110,7 +111,7 @@ public:
 		return Fraction((fraction1.numerator) * fraction2.numerator, (fraction1.denominator) * fraction2.denominator);
 	}
 
-	friend Fraction operator-(const Fraction& fraction)
+	Fraction operator-(const Fraction& fraction)
 	{
 		return Fraction((this->numerator) * fraction.denominator - (this->denominator) * fraction.numerator, this->denominator * fraction.denominator);
 
@@ -160,7 +161,7 @@ public:
 
 	Fraction FractionPow(int n)
 	{
-		return Fraction(pow(fraction.numerator, n), pow(fraction.denominator, n));
+		return Fraction(pow(this->numerator, n), pow(this->denominator, n));
 	}
 
 	friend ostream& operator<<(ostream& stream, const Fraction& fraction)
@@ -193,5 +194,5 @@ int main(int argc, char* argv[])
 	cout << 1 / (3 * fr1 + 4 * fr2) << endl;
 	cout << fr1.abs() << endl; //модуль числа
 	cout << fr1.reverse() << endl; //обратное число
-	return 0;
+	return EXIT_SUCCESS;
 }
