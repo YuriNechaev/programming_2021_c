@@ -27,6 +27,7 @@ public:
 	double arg();
 	Complex reverse();
 	void Complexsqrt(int n, ostream& stream);
+
 	friend Complex operator*(Complex complex1, Complex complex2);
 	friend Complex operator*(double d, Complex complex);
 	friend Complex operator*(Complex complex, double d);

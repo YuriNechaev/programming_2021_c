@@ -51,6 +51,7 @@ void Complex::Complexsqrt(int n, ostream& stream)
 		cout << Complex((pow(pow(((this->x) * (this->x) + (this->y) * (this->y)), 1 / 2), 1 / n) * cos(atan2((this->x), (this->y)) / n + 3.141592 * 2 * i / n), pow(pow(((this->x) * (this->x) + (this->y) * (this->y)), 1 / 2), 1 / n) * sin(atan2((this->x), (this->y)) / n + 3.141592 * 2 * i / n)));
 	}
 }
+
 Complex operator*(Complex complex1, Complex complex2)
 {
 	return Complex(complex1.x * complex2.x - complex1.y * complex2.y, complex1.y * complex2.x + complex1.x * complex2.y);
