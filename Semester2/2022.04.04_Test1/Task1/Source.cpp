@@ -5,12 +5,12 @@ using namespace std;
 class Fraction
 {
 private:
-	long long numerator;
-	long long denominator;
+	long long numerator = 0;
+	long long denominator = 0;
 
 public:
-	Fraction(long long numerator, long long demoninator);
-	Fraction(const Fraction& fraction);
+	Fraction(long long numerator, long long demoninator) : numerator(numerator), denominator(denominator) {}
+	Fraction(const Fraction& fraction) : numerator(fraction.numerator), denominator(fraction.denominator) {}
 	~Fraction()
 	{
 		this->numerator = 0;
@@ -146,19 +146,19 @@ public:
 		return Fraction((this->denominator), (this->numerator));
 	}
 
-	Fraction abs(const Fraction& fraction)
+	Fraction abs()
 	{
-		if (fraction.numerator * fraction.denominator > 0)
+		if (this->numerator * this->denominator > 0)
 		{
-			return fraction;
+			return Fraction(numerator, denominator);
 		}
 		else
 		{
-			return Fraction(fraction.numerator * (-1), fraction.denominator);
+			return Fraction(this->numerator * (-1), this->denominator);
 		}
 	}
 
-	Fraction FractionPow(Fraction fraction, int n)
+	Fraction FractionPow(int n)
 	{
 		return Fraction(pow(fraction.numerator, n), pow(fraction.denominator, n));
 	}
