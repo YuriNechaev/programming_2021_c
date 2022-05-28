@@ -109,7 +109,8 @@ int ArrayList::extractbegin()
 		newdata[i - 1] = data[i];
 	}
 	int t = data[0];
-	delete data;
+	delete[] data;
+	data = newdata;
 	return t;
 }
 
@@ -117,6 +118,17 @@ int ArrayList::extractend()
 {
 	this->count--;
 	return this->data[this->count];
+}
+
+int ArrayList::extract(int position)
+{
+	this->count--;
+	int t = data[position];
+	for (int i = position; i < count; ++i)
+	{
+		data[i] = data[i + 1];
+	}
+	return t;
 }
 
 int& ArrayList::operator[](int pos)
